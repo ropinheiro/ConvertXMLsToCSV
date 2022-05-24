@@ -30,15 +30,15 @@ So expect this application to become more generic and modular with time.
 
 To use this with the current limitations:
 
-1. Check Configs class: edit the hardcoded paths here to match your paths.
-2. Check CSVBuilder.ConvertDataToCsv: does it read the data from the expected dataset places.
-3. Check CSVBuilder.ConvertDataToCsv: does it write the data to he expected CSV columns.
+1. Check .config file: edit the values here to match your paths.
+2. Check CSVBuilder.ConvertDataToCsv: does it read the data from the expected dataset places?
+3. Check CSVBuilder.ConvertDataToCsv: does it write the data to he expected CSV columns?
 4. Build and run the application.
 
 Currently, my personal steps are:
 
 1. Do the steps 1-3 above.
-2. Build, and copy the built files to a .\tests\ folder (you have already my last build here).
+2. Build and let it automatically copy the needed files to a .\tests\ folder (you have already my last build here).
 3. Put the XML files in a .\tests\data\ folder (you have already some XML here).
 4. Run the application in that folder.
 5. It will generate a .\tests\output.csv file (you have already a file here).
@@ -47,6 +47,6 @@ Currently, my personal steps are:
 
 1. Automated tests.
 2. Better modularity and code cohesion.
-3. Accept paths as arguments instead of hardcoded.
+3. Accept paths as arguments (not only through configuration file).
 4. Have a configurable way to map XML paths to CSV output columns.
 5. Have a configurable way to choose the final CSV output columns.
