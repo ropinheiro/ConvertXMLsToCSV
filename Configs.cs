@@ -1,9 +1,16 @@
-﻿namespace ConvertXMLsToCSV
+﻿using System.Configuration;
+
+namespace ConvertXMLsToCSV
 {
     public class Configs
     {
-        public string inputDirectory = @".\data\";
-        public string outputDirectory = @".\";
-        public string outputFile = "output.csv";
+        public string inputDirectory =
+            ConfigurationManager.AppSettings[ "inputDirectory" ];
+
+        public string outputDirectory =
+            ConfigurationManager.AppSettings[ "outputDirectory" ];
+
+        public string outputFile =
+            ConfigurationManager.AppSettings[ "outputFile" ];
     }
 }

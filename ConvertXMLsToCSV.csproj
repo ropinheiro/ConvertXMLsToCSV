@@ -10,7 +10,11 @@
   </PropertyGroup>
 
   <Target Name="PostBuild" AfterTargets="PostBuildEvent">
-    <Exec Command="copy /y &quot;$(TargetDir)ConvertXMLsToCSV.dll&quot; &quot;$(ProjectDir)test\ConvertXMLsToCSV.dll&quot;&#xD;&#xA;copy /y &quot;$(TargetDir)ConvertXMLsToCSV.exe&quot; &quot;$(ProjectDir)test\ConvertXMLsToCSV.exe&quot;&#xD;&#xA;copy /y &quot;$(TargetDir)ConvertXMLsToCSV.runtimeconfig.json&quot; &quot;$(ProjectDir)test\ConvertXMLsToCSV.runtimeconfig.json&quot;" />
+    <Exec Command="copy /y &quot;$(TargetDir)ConvertXMLsToCSV.dll&quot; &quot;$(ProjectDir)test\ConvertXMLsToCSV.dll&quot;&#xD;&#xA;copy /y &quot;$(TargetDir)ConvertXMLsToCSV.dll.config&quot; &quot;$(ProjectDir)test\ConvertXMLsToCSV.dll.config&quot;&#xD;&#xA;copy /y &quot;$(TargetDir)ConvertXMLsToCSV.exe&quot; &quot;$(ProjectDir)test\ConvertXMLsToCSV.exe&quot;&#xD;&#xA;copy /y &quot;$(TargetDir)ConvertXMLsToCSV.runtimeconfig.json&quot; &quot;$(ProjectDir)test\ConvertXMLsToCSV.runtimeconfig.json&quot;&#xD;&#xA;copy /y &quot;$(TargetDir)System.Configuration.ConfigurationManager.dll&quot; &quot;$(ProjectDir)test\System.Configuration.ConfigurationManager.dll&quot;" />
   </Target>
+
+  <ItemGroup>
+    <PackageReference Include="System.Configuration.ConfigurationManager" Version="6.0.0" />
+  </ItemGroup>
 
 </Project>
