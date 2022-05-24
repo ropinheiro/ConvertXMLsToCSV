@@ -30,9 +30,9 @@ So expect this application to become more generic and modular with time.
 
 To use this with the current limitations:
 
-1. Check the Configs class, and edit the hardcoded paths here to match your paths.
-2. Check if the ConvertDataToCsv method reads the XML data from the expected places.
-3. Check if the ConvertDataToCsv method outputs the data tot he expected CSV output.
+1. Check Configs class: edit the hardcoded paths here to match your paths.
+2. Check CSVBuilder.ConvertDataToCsv: does it read the data from the expected dataset places.
+3. Check CSVBuilder.ConvertDataToCsv: does it write the data to he expected CSV columns.
 4. Build and run the application.
 
 Currently, my personal steps are:

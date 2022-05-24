@@ -17,10 +17,31 @@ namespace ConvertXMLsToCSV
         {
             StringBuilder sb = new();
 
-            DataTable annotations = ds.Tables[ 0 ];   // Tables[0] contain simple values in <annotation>
-            // Ignore Tables[1]                       // Tables[1] contain simple values in <annotation> -> <size>
-            // Ignore Tables[2]                       // Tables[2] contain simple values in <annotation> -> <object>
-            DataTable boundingBoxes = ds.Tables[ 3 ]; // Tables[3] contain simple values in <annotation> -> <object> -> <bndbox>
+            /*
+             * Parsing the DS according to the original XML:
+             * (TODO: how to make this generic?)
+             * 
+             <annotation>       -> Table[0] or "annotation"
+                <folder>...
+                <filename>... - - - - - - - - - - - - - - - - - ** wanted **
+                <size>          -> Table[1] or "size"
+                   ...
+                </size>
+                <segmented>...
+                <object>        -> Table[2] or "object"
+                    <name>...
+                    <pose>...
+                    <truncated>...
+                    <occluded>...
+                    <difficult>...
+                    <bndbox>    -> Table[3] or "bndbox"
+                        <xmin>... - - - - - - - - - - - - - - - ** wanted **
+                        <ymin>... - - - - - - - - - - - - - - - ** wanted **
+                        <xmax>... - - - - - - - - - - - - - - - ** wanted **
+                        <ymax>... - - - - - - - - - - - - - - - ** wanted **
+             */
+            DataTable annotations = ds.Tables[ "annotation" ];
+            DataTable boundingBoxes = ds.Tables[ "bndbox" ];
 
             for ( int i = 0; i < annotations.Rows.Count; i++ )
             {
