@@ -9,4 +9,8 @@
     <OutputPath></OutputPath>
   </PropertyGroup>
 
+  <Target Name="PostBuild" AfterTargets="PostBuildEvent">
+    <Exec Command="copy /y &quot;$(TargetDir)ConvertXMLsToCSV.dll&quot; &quot;$(ProjectDir)test\ConvertXMLsToCSV.dll&quot;&#xD;&#xA;copy /y &quot;$(TargetDir)ConvertXMLsToCSV.exe&quot; &quot;$(ProjectDir)test\ConvertXMLsToCSV.exe&quot;&#xD;&#xA;copy /y &quot;$(TargetDir)ConvertXMLsToCSV.runtimeconfig.json&quot; &quot;$(ProjectDir)test\ConvertXMLsToCSV.runtimeconfig.json&quot;" />
+  </Target>
+
 </Project>
