@@ -1,10 +1,52 @@
 # ConvertXMLsToCSV
 A single helper program to convert some specific XML to CSV.
 
+## Why I did this?
 
-Sources:
+I was learning some ML stuff here:
 
-https://makeml.app/soccer-ball-tutorial
+https://pyimagesearch.com/2020/10/05/object-detection-bounding-box-regression-with-keras-tensorflow-and-deep-learning/
 
-https://pyimagesearch.com/2020/10/05/object-detection-bounding-box-regression-with-keras-tensorflow-and-deep-learning/?_ga=2.167467641.617987582.1653129731-311191862.1649098660
+At a given point I wanted to apply those learnings to a particular case.
 
+For that purpose, I needed a dataset of images with soccer balls, each image already classified with a bounding box around the ball (top-left and bottom-right pixel coordinates of the bounding box, inside the image).
+
+I found such dataset here: https://makeml.app/soccer-ball-tutorial
+
+It came with a bunch of XML files (one for each image) with the information I needed.
+
+But I needed that information to be gathered in a single CSV file to be used in the pyImageSearch 
+
+But I also found that not only I would like to apply 
+
+
+## How to use
+
+Currently, I did this in a hurry and the steps are a bit cumbersome.
+
+I expect to improve this application with time, as I am going to use it with different datasets and to different purposes.
+
+So expect this application to become more generic and modular with time.
+
+To use this with the current limitations:
+
+1. Check the Configs class, and edit the hardcoded paths here to match your paths.
+2. Check if the ConvertDataToCsv method reads the XML data from the expected places.
+3. Check if the ConvertDataToCsv method outputs the data tot he expected CSV output.
+4. Build and run the application.
+
+Currently, my personal steps are:
+
+1. Do the steps 1-3 above.
+2. Build, and copy the built files to a .\tests\ folder (you have already my last build here).
+3. Put the XML files in a .\tests\data\ folder (you have already some XML here).
+4. Run the application in that folder.
+5. It will generate a .\tests\output.csv file (you have already a file here).
+
+## Future work
+
+1. Automated tests.
+2. Better modularity and code cohesion.
+3. Accept paths as arguments instead of hardcoded.
+4. Have a configurable way to map XML paths to CSV output columns.
+5. Have a configurable way to choose the final CSV output columns.
